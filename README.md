@@ -1,6 +1,6 @@
 # Pokemon-classifier
 
-# Install
+## Install
 
 ```
 git clone https://github.com/AdrianCobo/Pokemon_classifier.git
@@ -10,9 +10,9 @@ python3 clasificador.py
 ```
 *Check the imports in the classifier.py file and install the required libraries using pip.
 
-# Run
+## Run
 ```
 python3 clasificador.py
 ```
 
-# Results:
+## Results:
