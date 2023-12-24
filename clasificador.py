@@ -1,4 +1,4 @@
-# imagenes de: https://www.kaggle.com/datasets/vishalsubbiah/pokemon-images-and-types/
+# images from: https://www.kaggle.com/datasets/vishalsubbiah/pokemon-images-and-types/
 
 # veamos imagenes:
 import os
@@ -67,9 +67,7 @@ if CREATE_DATA:
                 cv2.waitKey(1)
                 training_data.append([np.array(rotated_img), output])
             
-            print(id, pokemon_class[id], np.mean(img))
             id += 1
-    print(len(training_data)/360*15)
     np.save("pokemons_data_" + chr(classes) + ".npy", np.array(training_data, dtype=object))
 
 class Net(nn.Module):
@@ -190,9 +188,6 @@ def train(net):
                 batch_X, batch_y = batch_X.to(device), batch_y.to(device)
 
                 acc, loss = fwd_pass(batch_X, batch_y, train=True)
-
-                #print(f"Acc: {round(float(acc),2)} Loss: {round(float(loss),4)}")
-                # analice training acc and loss and test acc and loss each 10 steps
             
             val_acc, val_loss = test(size=BATCH_SIZE)
             print("ep:", epoch, val_acc, "b", val_loss)
